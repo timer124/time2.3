@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="تطبيق بومودورو وقائمة المهام لتنظيم الوقت وزيادة الإنتاجية"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <title data-translate="page-title">بومودورو وقائمة المهام</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <button id="show-sidebar" class="show-sidebar-btn">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- القائمة الجانبية -->
+    <div class="sidebar collapsed" role="complementary">
+      <div class="sidebar-header">
+        <h3 data-translate="menu">القائمة</h3>
+        <button id="toggle-sidebar" aria-label="إغلاق القائمة">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="sidebar-content">
+        <div class="sidebar-sections">
+          <div class="sidebar-section">
+            <div class="section-header" data-section="settings">
+              <i class="fas fa-cog section-icon"></i>
+              <h4 data-translate="timer-settings">إعدادات المؤقت</h4>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="section-content settings-section">
+              <div class="timer-settings">
+                <div class="setting-item">
+                  <label for="work-time" data-translate="work-time"
+                    >وقت العمل (دقائق)</label
+                  >
+                  <input
+                    type="number"
+                    id="work-time"
+                    value="25"
+                    min="1"
+                    max="60"
+                    aria-label="وقت العمل بالدقائق"
+                  />
+                </div>
+                <div class="setting-item">
+                  <label for="short-break-time" data-translate="short-break"
+                    >استراحة قصيرة (دقائق)</label
+                  >
+                  <input
+                    type="number"
+                    id="short-break-time"
+                    value="5"
+                    min="1"
+                    max="30"
+                    aria-label="وقت الاستراحة القصيرة بالدقائق"
+                  />
+                </div>
+                <div class="setting-item">
+                  <label for="long-break-time" data-translate="long-break"
+                    >استراحة طويلة (دقائق)</label
+                  >
+                  <input
+                    type="number"
+                    id="long-break-time"
+                    value="15"
+                    min="1"
+                    max="60"
+                    aria-label="وقت الاستراحة الطويلة بالدقائق"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <div class="section-header" data-section="general">
+              <i class="fas fa-sliders-h section-icon"></i>
+              <h4 data-translate="general-settings">إعدادات عامة</h4>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="section-content appearance-section">
+              <div class="theme-switch">
+                <label data-translate="appearance-mode">وضع المظهر</label>
+                <div class="theme-options">
+                  <button id="light-theme" class="theme-btn active">
+                    <i class="fas fa-sun"></i>
+                    <span data-translate="light-mode">نهاري</span>
+                  </button>
+                  <button id="dark-theme" class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                    <span data-translate="dark-mode">ليلي</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <div class="section-header" data-section="language">
+              <i class="fas fa-language section-icon"></i>
+              <h4 data-translate="language">اللغة</h4>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="section-content language-section">
+              <div class="language-options">
+                <button id="arabic-lang" class="lang-btn active">
+                  <i class="fas fa-globe"></i>
+                  <span data-translate="arabic">العربية</span>
+                </button>
+                <button id="english-lang" class="lang-btn">
+                  <i class="fas fa-globe"></i>
+                  English
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-section">
+            <div class="section-header" data-section="backgrounds">
+              <i class="fas fa-image section-icon"></i>
+              <h4 data-translate="background">خلفية الموقع</h4>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="section-content backgrounds-section">
+              <div class="background-options">
+                <div class="background-option" data-bg="bg1">
+                  <img src="Imgs/img1.jpg" alt="خلفية 1" />
+                  <span data-translate="background-1">خلفية 1</span>
+                </div>
+                <div class="background-option" data-bg="bg2">
+                  <img
+                    src="Imgs/guillaume-le-louarn-uC21aXJ7yQs-unsplash.jpg"
+                    alt="خلفية 2"
+                  />
+                  <span data-translate="background-2">خلفية 2</span>
+                </div>
+                <div class="background-option" data-bg="bg3">
+                  <img src="Imgs/img3.jpg" alt="خلفية 3" />
+                  <span data-translate="background-3">خلفية 3</span>
+                </div>
+                <div class="background-option" data-bg="bg4">
+                  <img src="Imgs/img4.jpg" alt="خلفية 4" />
+                  <span data-translate="background-4">خلفية 4</span>
+                </div>
+                <div class="background-option" data-bg="bg5">
+                  <img src="Imgs/img5.jpg" alt="خلفية 5" />
+                  <span data-translate="background-5">خلفية 5</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- المؤقت الرئيسي -->
+    <main class="main-content" role="main">
+      <div class="timer-container">
+        <div class="timer-circle" role="timer" aria-live="polite">
+          <svg class="timer-svg" viewBox="0 0 100 100" aria-hidden="true">
+            <circle class="timer-path-elapsed" cx="50" cy="50" r="45" />
+            <circle class="timer-path-remaining" cx="50" cy="50" r="45" />
+          </svg>
+          <div class="timer-display">
+            <span class="time-left" aria-label="الوقت المتبقي">25:00</span>
+            <span class="timer-label" data-translate="timer-work">العمل</span>
+          </div>
+        </div>
+        <div class="timer-type">
+          <button
+            id="pomodoro"
+            class="timer-type-button active"
+            data-translate="work-button"
+          >
+            عمل
+          </button>
+          <button
+            id="short-break"
+            class="timer-type-button"
+            data-translate="short-break-button"
+          >
+            استراحة قصيرة
+          </button>
+          <button
+            id="long-break"
+            class="timer-type-button"
+            data-translate="long-break-button"
+          >
+            استراحة طويلة
+          </button>
+        </div>
+        <div class="timer-controls">
+          <button
+            id="toggle-timer"
+            class="control-button"
+            aria-label="بدء/إيقاف المؤقت"
+          >
+            <i class="fas fa-play" aria-hidden="true"></i>
+          </button>
+          <button
+            id="reset"
+            class="control-button"
+            aria-label="إعادة ضبط المؤقت"
+          >
+            <i class="fas fa-redo-alt" aria-hidden="true"></i>
+          </button>
+          <button
+            id="show-tasks"
+            class="control-button"
+            aria-label="عرض قائمة المهام"
+          >
+            <i class="fas fa-tasks" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- نافذة قائمة المهام -->
+    <div
+      id="tasks-popup"
+      class="tasks-popup"
+      role="dialog"
+      aria-labelledby="tasks-title"
+    >
+      <div class="tasks-popup-content">
+        <div class="tasks-popup-header">
+          <h3 id="tasks-title" data-translate="tasks-list">قائمة المهام</h3>
+          <button id="close-tasks-popup" aria-label="إغلاق قائمة المهام">
+            <i class="fas fa-times" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="tasks-popup-body">
+          <div class="todo-input">
+            <input
+              type="text"
+              id="task-input"
+              data-translate="add-task-placeholder"
+              placeholder="أضف مهمة جديدة..."
+              aria-label="إضافة مهمة جديدة"
+            />
+            <button id="add-task" aria-label="إضافة المهمة">
+              <i class="fas fa-plus" aria-hidden="true"></i>
+            </button>
+          </div>
+          <ul id="task-list" role="list" aria-label="قائمة المهام"></ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js" defer></script>
+  </body>
+</html>
